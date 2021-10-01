@@ -1,3 +1,6 @@
 _site/
 node_modules/
 package-lock.json
+
+# Resoc image data mapping file
+resoc-image-data.json

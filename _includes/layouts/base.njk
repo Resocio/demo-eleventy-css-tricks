@@ -1,4 +1,14 @@
 <!doctype html>
+{% set socialImageUrl %}
+{%- resoc
+      template = "default",
+      slug = (title or metadata.title) | slug,
+      values = {
+        title: title or metadata.title,
+        sideImage: featuredImage
+      }
+-%}
+{% endset %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,6 +19,12 @@
     <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+
+    <meta name="og:title" content="{{ title or metadata.title }}"/>
+    <meta name="og:description" content="{{ description or metadata.description }}"/>
+    <meta name="og:image" content="{{ socialImageUrl }}"/>
+    <meta name="og:image:width" content="1200"/>
+    <meta name="og:image:height" content="630"/>
   </head>
   <body>
     <header>
