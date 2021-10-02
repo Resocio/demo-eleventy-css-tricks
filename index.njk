@@ -4,6 +4,19 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
+<p>
+  This blog has automated social images thanks to the
+  <a href="https://www.npmjs.com/package/itdk">image template development kit</a>, the
+  <a href="https://www.npmjs.com/package/@resoc/eleventy-plugin-social-image">Eleventy social image plugin</a> and the
+  <a href="https://www.npmjs.com/package/@resoc/netlify-plugin-social-image">Netlify social image plugin</a>.
+</p>
+
+<p>
+  To see it in action, share <a href="/">this page</a> and
+  <a href="/posts/fourthpost/">this page</a> on a social network or
+  submit it to the <a href="https://developers.facebook.com/tools/debug/">Facebook debugger</a>.
+</p>
+
 {% set maxPosts = collections.posts.length | min(3) %}
 <h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 
